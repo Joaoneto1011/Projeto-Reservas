@@ -1,27 +1,55 @@
-<h1 align="center">🏨 Sistema de Reservas de Quartos em Java</h1> <p align="center"> <b>Projeto desenvolvido em Java para gerenciamento de reservas de quartos, aplicando Programação Orientada a Objetos (POO) e tratamento de exceções personalizadas.</b><br> Permite cadastrar reservas, calcular a duração da estadia e atualizar as datas de forma segura, com validações automáticas e mensagens de erro claras. </p>
-📋 Funcionalidades Principais
+# 🏨 Sistema de Reservas de Hotel - Java
 
-🏠 Cadastro de reserva com número do quarto, data de chegada e saída.
+> Um projeto simples e elegante desenvolvido em **Java**, com foco em **orientação a objetos**, **tratamento de exceções** e **boas práticas de encapsulamento**.
 
-⏱️ Cálculo automático da duração da estadia (em noites).
+---
 
-✅ Validação de regras de negócio (saída deve ser posterior à chegada).
+## 📖 Descrição
 
-🔁 Atualização das datas da reserva.
+Este projeto simula um **sistema de reservas de hotel**, permitindo ao usuário:
+- Registrar uma nova reserva informando o número do quarto e as datas de **chegada** e **saída**;
+- **Atualizar** uma reserva existente;
+- **Validar** as regras de negócio, garantindo que as datas sejam consistentes e futuras;
+- Calcular automaticamente a **duração da estadia** em noites.
 
-⚙️ Tratamento de exceções personalizadas (DomainException) para garantir integridade dos dados.
+O sistema faz uso de uma **exceção personalizada (`DomainException`)** para tratar erros de domínio, como:
+- Datas inválidas;
+- Datas no passado;
+- Saída anterior à chegada.
 
-🧩 Estrutura do Projeto
-💻 Classe / Pacote	📝 Descrição
-Reservas (model.entities)	Representa uma reserva de quarto com número, chegada e saída. Possui métodos para calcular duração e atualizar datas com validação.
-DomainException (model.exceptions)	Classe de exceção personalizada usada para tratar erros específicos das regras de negócio.
-ProgramaPrincipal (application)	Classe principal que interage com o usuário via terminal, cria e atualiza reservas e exibe os resultados formatados.
-⚙️ Tecnologias e Conceitos Aplicados
-<div align="center">
-🛠️ Tecnologia	💡 Conceito
-☕ Java SE 24+	Linguagem principal
-🧠 POO (Programação Orientada a Objetos)	Estruturação do código e modelagem de entidades
-📆 SimpleDateFormat / Date	Manipulação e formatação de datas
-⏳ TimeUnit	Cálculo da duração entre datas
-🚨 Exceções Personalizadas	Tratamento de erros com DomainException
-💻 Scanner	Entrada de dados via terminal
+---
+
+## ⚙️ Funcionalidades Principais
+
+✅ Cadastro de reserva (com data de chegada e saída)  
+✅ Atualização de reserva existente  
+✅ Cálculo automático da duração (em noites)  
+✅ Tratamento de erros de domínio e formato de data  
+✅ Estrutura orientada a objetos com boas práticas
+
+---
+
+## 🧩 Estrutura do Projeto
+
+src/
+├── application/
+│ └── ProgramaPrincipal.java # Classe principal (interage com o usuário)
+│
+├── model/
+│ ├── entities/
+│ │ └── Reservas.java # Classe de domínio que representa a reserva
+│ │
+│ └── exceptions/
+│ └── DomainException.java # Exceção personalizada de domínio
+│
+└── ...
+
+Numero do quarto: 305
+Data de chegada (dd/MM/yyyy): 15/10/2025
+Data de saida (dd/MM/yyyy): 20/10/2025
+Reserva: Quarto 305, chegada: 15/10/2025, saida: 20/10/2025, 5 noites
+
+Entre com os dados para atualizar a reserva:
+Data de chegada (dd/MM/yyyy): 16/10/2025
+Data de saida (dd/MM/yyyy): 22/10/2025
+Reserva: Quarto 305, chegada: 16/10/2025, saida: 22/10/2025, 6 noites
